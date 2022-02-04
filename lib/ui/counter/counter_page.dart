@@ -15,7 +15,18 @@ class CounterPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(title),
       ),
-      body: const CounterBody(),
+      body: Stack(
+        children: [
+          const CounterBody(),
+          Align(
+            alignment: Alignment.bottomRight,
+            child: TextButton(
+              onPressed: () => Navigator.of(context).pushNamed('/about'),
+              child: const Text('About'),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

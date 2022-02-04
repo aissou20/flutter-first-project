@@ -16,6 +16,7 @@ class NumButton extends StatelessWidget{
    return  Padding(
      padding: const EdgeInsets.all(8.0),
      child: FloatingActionButton(
+       heroTag: 'FAB_$value',
        onPressed: () {
          callback.call(value);
        },

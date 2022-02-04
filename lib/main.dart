@@ -1,5 +1,7 @@
+import 'package:first_project_flutter/ui/splashscreen/splash_scree.dart';
 import 'package:flutter/material.dart';
 
+import 'ui/about/about_page.dart';
 import 'ui/counter/counter_page.dart';
 
 void main() {
@@ -17,7 +19,15 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: const CounterPage(title:'counter page'),
+      initialRoute: '/splashscreen',
+      routes:{
+        '/counter':(context)=> const CounterPage(
+            title: 'Counter Page'
+        ),
+        '/about' :(context)=> const AboutPage(),
+        '/splashscreen': (context)=> const SplashScreen(),
+      },
+      // home: const CounterPage(title:'counter page'),
     );
   }
 }
